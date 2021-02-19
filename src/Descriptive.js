@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Descriptive.css";
 import "./styles/Styles.css";
-import Plotly from "plotly.js-dist";
+import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
 const Plot = createPlotlyComponent(Plotly);
 
