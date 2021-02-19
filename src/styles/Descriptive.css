@@ -1,0 +1,17 @@
+.Descriptive {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.graph-r-squared {
+  height: 1000px;
+  width: 1000px;
+}
+
+.chart {
+  justify-content: space-between;
+}

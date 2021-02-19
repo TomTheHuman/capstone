@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Beer Predictor</title>
+  </head>
+  <body>
+    <h1>🍻 Beer Predictor 🍻</h1>
+    <p>
+      Brand <SELECT name="brand">
+      {% for j in brands %}
+        <OPTION value="{{j[0]}}">{{j[1]}}</OPTION>
+      {% endfor %}
+      </SELECT>
+    </p>
+    <p>
+      Package Type <SELECT name="type">
+      {% for j in types %}
+        {% if j[0] == selected_brand %}
+        <OPTION value="{{j[0]}}">{{j[1]}}</OPTION>
+        {% endif %}
+      {% endfor %}
+      </SELECT>
+    </p>
+    <p>
+      Package Size <SELECT name="size">
+      {% for j in brands %}
+        <OPTION value="{{j[0]}}">{{j[1]}}</OPTION>
+      {% endfor %}
+      </SELECT>
+    </p>
+    <a href="/table">
+      <button>Get Data!</button>
+    </a>
+  </body>
+</html>

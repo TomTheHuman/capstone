@@ -1,0 +1,61 @@
+.Nav {
+  height: 70px;
+  margin: 10px;
+  margin-bottom: 50px;
+  background-color: #cadaeb;
+  border-radius: 20px;
+}
+
+.title {
+  float: left;
+  padding-left: 10px;
+}
+
+.nav-links {
+  padding-top: 5px;
+  padding-right: 10px;
+  float: right;
+}
+
+li {
+  display: inline;
+  padding-right: 25px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  margin: auto;
+  padding: 10px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #2162a6;
+}
+
+@media screen and (max-width: 618px) {
+  .Nav {
+    height: 100px;
+    display: inline-block;
+  }
+
+  .nav-links {
+    float: left;
+  }
+
+  h1 {
+    padding-bottom: 0;
+  }
+
+  ul {
+    margin: 0;
+  }
+}

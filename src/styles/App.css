@@ -1,0 +1,19 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  width: 35vw;
+  min-width: 450px;
+}
+
+.flex-item-right {
+  width: 55vw;
+  min-width: 600px;
+}
