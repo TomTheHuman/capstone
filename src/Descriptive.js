@@ -134,7 +134,7 @@ class ScatterPlot extends React.Component {
         }
       }
       var cases_sold = [];
-      for (var i in this.state.dataset) {
+      for (i in this.state.dataset) {
         if (this.state.dataset[i].brand === brand) {
           cases_sold.push(this.state.dataset[i].cases_sold);
         }
