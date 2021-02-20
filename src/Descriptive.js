@@ -43,7 +43,7 @@ class PieChart extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/brand-totals")
+    fetch("http://143.110.239.119/brand-totals")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ dataset: data.data }, () => {
@@ -116,7 +116,7 @@ class ScatterPlot extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/month-totals")
+    fetch("http://143.110.239.119/month-totals")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ dataset: data.data }, () => {

@@ -16,7 +16,7 @@ function Form(props) {
   const [months, setMonths] = useState([]);
 
   useEffect(() => {
-    fetch("/data")
+    fetch("http://143.110.239.119/data")
       .then((res) => res.json())
       .then((data) => {
         setBrands(data.brands);

@@ -24,7 +24,6 @@
     "start-api": "cd api && venv/Script/activate",
     "build": "react-scripts build"
   },
-  "proxy": "http://143.110.239.119",
   "eslintConfig": {
     "extends": [
       "react-app",
