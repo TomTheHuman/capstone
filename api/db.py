@@ -1,14 +1,16 @@
 import mysql.connector
 from mysql.connector import Error
 import sys
+import os
+
 
 import pandas as pd
 import numpy as np
 
-HOST = ENV.HOST
-USER = ENV.USER
-PASS = ENV.PASS
-DB = ENV.DB
+HOST = os.environ.get('HOST')
+USER = os.environ.get('USER')
+PASS = os.environ.get('PASS')
+DB = os.environ.get('DB')
 
 
 def get_db():
