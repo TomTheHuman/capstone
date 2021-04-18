@@ -5,10 +5,10 @@ import sys
 import pandas as pd
 import numpy as np
 
-HOST = '35.203.178.251'
-USER = 'wgu'
-PASS = 'wgu'
-DB = 'project_data'
+HOST = ENV.HOST
+USER = ENV.USER
+PASS = ENV.PASS
+DB = ENV.DB
 
 
 def get_db():
