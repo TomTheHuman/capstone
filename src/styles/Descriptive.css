@@ -1,15 +1,19 @@
 .Descriptive {
-  height: 100vh;
   text-align: center;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  width: 90%;
 }
 
-.graph-r-squared {
-  height: 1000px;
-  width: 1000px;
+
+.graphs-select {
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .chart {

@@ -1,3 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
@@ -6,6 +12,7 @@
 
   flex-direction: row;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .flex-item-left {
@@ -13,7 +20,31 @@
   min-width: 450px;
 }
 
-.flex-item-right {
-  width: 55vw;
-  min-width: 600px;
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 60vw;
+  min-width: 500px;
+  max-width: 700px;
+  background-color: #FAFAFA;
+  border-radius: 25px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.4);
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 618px) {
+  .flex-container {
+    align-items: flex-start;
+  }
+
+  .content-container {
+    background-color: white;
+    box-shadow: none;
+  }
 }

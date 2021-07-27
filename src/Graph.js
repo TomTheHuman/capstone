@@ -107,7 +107,9 @@ function Graph(props) {
 
   return (
     <div className="Graph flex-item-right flex-item">
+      <button className="back-button" onClick={() => props.cbFormView(true)}>Back</button>
       <div className="graph-container">
+      <div className="graph-content">
         <div className="graph-title">
           {populateTitle(props.prediction)}
           <p>{props.prediction.brand}</p>
@@ -116,8 +118,8 @@ function Graph(props) {
           {populateGraph(props.prediction, props.status)}
         </div>
       </div>
-
-      <div className="graph-text">{populateText(props.prediction)}</div>
+        <div className="graph-text">{populateText(props.prediction)}</div>
+      </div>
     </div>
   );
 }

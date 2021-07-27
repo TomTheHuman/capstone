@@ -6,16 +6,46 @@ import createPlotlyComponent from "react-plotly.js/factory";
 const Plot = createPlotlyComponent(Plotly);
 
 export default class Descriptive extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: "Historical Market Demand by Brand",
+      currentGraph: "pie"
+    };
+
+    this.handleChangeGraph = this.handleChangeGraph.bind(this)
+  }
+
+  handleChangeGraph(e) {
+    let description = ""
+
+    if (e.target.value === "pie") {
+      description = "Historical Market Demand by Brand"
+    } else {
+      description = "Relation Between Sales and Month By Brand"
+    }
+
+    this.setState({
+      description: description,
+      currentGraph: e.target.value,
+    })
+  }
+
   render() {
     return (
       <div className="Descriptive">
+        <h1 className="content-header">📊 Graphs</h1>
+        <p className="content-description">{this.state.description}</p>
+        <select
+            className="graphs-select"
+            name="graphs"
+            onChange={this.handleChangeGraph}
+          >
+            <option key="1" value="pie">Pie Chart</option>
+            <option key="2" value="bar">Bar Graph</option>
+          </select>
         <div className="chart">
-          <h1>Historical Market Demand by Brand</h1>
-          <PieChart />
-        </div>
-        <div className="chart">
-          <h1>Relation Between Sales and Month By Brand</h1>
-          <ScatterPlot />
+          {this.state.currentGraph === "pie" ? <PieChart /> : <ScatterPlot />}
         </div>
       </div>
     );
@@ -35,15 +65,15 @@ class PieChart extends React.Component {
         },
       ],
       layout: {
-        height: 500,
-        width: 600,
+        height: 400,
+        width: 480,
       },
     };
     this.sortData = this.sortData.bind(this);
   }
 
   componentDidMount() {
-    fetch("http://143.110.239.119/brand-totals")
+    fetch("/api/brand-totals")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ dataset: data.data }, () => {
@@ -110,13 +140,15 @@ class ScatterPlot extends React.Component {
         yaxis: {
           range: [],
         },
+        height: 400,
+        width: 480,
       },
     };
     this.sortData = this.sortData.bind(this);
   }
 
   componentDidMount() {
-    fetch("http://143.110.239.119/month-totals")
+    fetch("/api/month-totals")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ dataset: data.data }, () => {

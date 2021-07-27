@@ -16,7 +16,7 @@ function Form(props) {
   const [months, setMonths] = useState([]);
 
   useEffect(() => {
-    fetch("http://143.110.239.119/data")
+    fetch("/api/data")
       .then((res) => res.json())
       .then((data) => {
         setBrands(data.brands);
@@ -95,6 +95,8 @@ function Form(props) {
       size: selectedSize,
     };
 
+    props.cbFormView(false);
+
     props.cbStatus("Fetching prediction...");
     if (props.prediction !== null) {
       if (Object.keys(props.prediction).length !== 0) {
@@ -124,59 +126,57 @@ function Form(props) {
 
   return (
     <div className="Form flex-item-left flex-item">
-      <head>
-        <meta charset="UTF-8" />
-        <title>Beer Predictor</title>
-      </head>
-      <body>
-        <form onSubmit={handleSubmit} action="/query" method="PUT">
-          <div className="form-field">
-            <label className="form-label" for="brand">
-              Brand{" "}
-            </label>
-            <select
-              className="form-input"
-              name="brand"
-              onChange={handleChangeBrand}
-            >
-              {populateBrands(brands)}
-            </select>
-          </div>
-          <div className="form-field">
-            <label className="form-label" for="size">
-              Package Size{" "}
-            </label>
-            <select
-              className="form-input"
-              name="size"
-              onChange={handleChangeSize}
-            >
-              {populateSizes(sizes, selectedBrand)}
-            </select>
-          </div>
-          <div className="form-field">
-            <label className="form-label" for="months">
-              Month{" "}
-            </label>
-            <select
-              className="form-input"
-              name="months"
-              onChange={handleChangeMonth}
-            >
-              {populateMonths(months)}
-            </select>
-          </div>
-          <div className="form-field">
-            <input
-              className="form-submit"
-              type="submit"
-              value="Predict"
-            ></input>
-          </div>
-        </form>
-      </body>
+      <form onSubmit={handleSubmit} action="/query" method="PUT">
+        <div className="form-field">
+          <label className="form-label" for="brand">
+            Brand{" "}
+          </label>
+          <select
+            className="form-input"
+            name="brand"
+            onChange={handleChangeBrand}
+          >
+            {populateBrands(brands)}
+          </select>
+        </div>
+        <div className="form-field">
+          <label className="form-label" for="size">
+            Package Size{" "}
+          </label>
+          <select
+            className="form-input"
+            name="size"
+            onChange={handleChangeSize}
+          >
+            {populateSizes(sizes, selectedBrand)}
+          </select>
+        </div>
+        <div className="form-field">
+          <label className="form-label" for="months">
+            Month{" "}
+          </label>
+          <select
+            className="form-input"
+            name="months"
+            onChange={handleChangeMonth}
+          >
+            {populateMonths(months)}
+          </select>
+        </div>
+        <div className="form-field">
+          <input
+            className="form-submit"
+            type="submit"
+            value="Predict"
+          ></input>
+        </div>
+      </form>
     </div>
   );
+}
+
+const FormFields = () => {
+
 }
 
 export default Form;

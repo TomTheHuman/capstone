@@ -5,16 +5,13 @@ import "./styles/Styles.css";
 function Nav() {
   return (
     <div className="Nav">
-      <div className="title">
-        <h1>🍻 Beer Predictor</h1>
-      </div>
       <div className="nav-links">
         <ul>
           <li>
-            <a href="/">Predictor</a>
+            <a href="/">Get Prediction</a>
           </li>
           <li>
-            <a href="/info">Graphs & Info</a>
+            <a href="/info">View Graphs</a>
           </li>
         </ul>
       </div>
