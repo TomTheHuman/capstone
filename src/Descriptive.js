@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/Descriptive.css";
-import "./styles/Styles.css";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
 const Plot = createPlotlyComponent(Plotly);
@@ -65,8 +64,8 @@ class PieChart extends React.Component {
         },
       ],
       layout: {
-        height: 400,
-        width: 480,
+        height: 420,
+        width: 600,
       },
     };
     this.sortData = this.sortData.bind(this);
@@ -140,8 +139,8 @@ class ScatterPlot extends React.Component {
         yaxis: {
           range: [],
         },
-        height: 400,
-        width: 480,
+        height: 420,
+        width: 600,
       },
     };
     this.sortData = this.sortData.bind(this);

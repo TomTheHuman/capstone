@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles/Form.css";
-import "./styles/Styles.css";
 import { select } from "async";
 
 function Form(props) {
@@ -104,7 +103,7 @@ function Form(props) {
       }
     }
 
-    axios.post("/query", request_data).then((response) => {
+    axios.post("/api/query", request_data).then((response) => {
       props.cbPrediction(filterData(response.data));
     });
   }

@@ -5,7 +5,6 @@ import Nav from "./Nav";
 import Graph from "./Graph";
 import Descriptive from "./Descriptive";
 import "./styles/App.css";
-import "./styles/Styles.css";
 
 class App extends React.Component {
   constructor(props) {
