@@ -64,7 +64,7 @@ class PieChart extends React.Component {
         },
       ],
       layout: {
-        height: 420,
+        height: 500,
         width: 600,
       },
     };
@@ -139,7 +139,7 @@ class ScatterPlot extends React.Component {
         yaxis: {
           range: [],
         },
-        height: 420,
+        height: 500,
         width: 600,
       },
     };
