@@ -41,7 +41,7 @@ export default class Descriptive extends React.Component {
             onChange={this.handleChangeGraph}
           >
             <option key="1" value="pie">Pie Chart</option>
-            <option key="2" value="bar">Bar Graph</option>
+            <option key="2" value="scatter">Scatter Plot</option>
           </select>
         <div className="chart">
           {this.state.currentGraph === "pie" ? <PieChart /> : <ScatterPlot />}
